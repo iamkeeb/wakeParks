@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "222823657107",
+    "firebase_url": "https://androidappdev-25fae.firebaseio.com",
+    "project_id": "androidappdev-25fae",
+    "storage_bucket": "androidappdev-25fae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222823657107:android:ce13a18ec9ab263c",
+        "android_client_info": {
+          "package_name": "com.example.kissesfrme_20.wakeparks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222823657107-a020412rjahmjdnbhcjjadgnqq6oapft.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kissesfrme_20.wakeparks",
+            "certificate_hash": "F5F7E63F1B5A786354650685986125837548D7FF"
+          }
+        },
+        {
+          "client_id": "222823657107-drv6h4vqo9dtn37ieo7crmc863874elm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXf-yVbL4Bz16Jl3dFkZFL5Hg0s6Fgq9Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222823657107-drv6h4vqo9dtn37ieo7crmc863874elm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
