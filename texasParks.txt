@@ -1,0 +1,183 @@
+Name, Website, address, hours, Cable Price, Gear Price, camps, lessons, Picture
+
+
+Hydrous Wake Park - Allen
+http://hydrouswakeparks.com/
+580 N Cedar Dr, Allen, TX 75002
+M-F: 12pm - Dark
+Sat: 12pm - Dark
+Sun: 12pm - Dark
+2hr: $30
+4hr: $50
+Helmet: $5
+Vest: $5
+Beg Brd: $5
+Cbl Brd: $10
+Camps: Yes
+Lessons: Yes
+pic: http://hydrouswakeparks.com/images/asover.jpg
+phone: (214)-390-3088
+
+
+Hydrous Wake Park - Little Elm
+http://hydrouswakeparks.com/
+280 E Eldorado Pkwy, Little Elm, TX 75068
+M-F: 12pm - Dark
+Sat: 12pm - Dark
+Sun: 12pm - Dark
+2hr: $30
+4hr: $50
+Helmet: $5
+Vest: $5
+Beg Brd: $5
+Cbl Brd: $10
+Camps: Yes
+Lessons: Yes
+pic: http://hydrouswakeparks.com/images/leover.jpg
+phone: (214)-310-1105
+
+
+Cow Town Wake Park
+http://cowtownwakepark.com/
+1301 E Northside Drive, Fort Worth, TX 76102
+M-F: Closed due to flood
+Sat: Closed due to flood
+Sun: Closed due to flood
+2hr: not available
+4Hr: $35
+Helmet: $7
+Vest: $7
+Beg Brd: $9
+Cbl Brd: $15
+Camps: Yes
+Lessons: Yes
+pic: http://cowtownwakepark.com/wp-content/uploads/2014/04/Lake_1600x497-1030x302.jpg
+phone: (817)-717-1384
+
+
+Wake Sport Ranch
+http://www.wakesportranch.com/
+Performance Ct, Cresson, TX 76035
+M-F: 12pm - 7pm
+Sat: 12pm - 7pm
+Sun: 12pm - 7pm
+2hr: $25
+4hr: $30
+Helmet: $5
+Vest: $5
+Beg Brd: $7
+Cbl Brd: $7
+Camps: No
+Lessons: No
+pic: http://www.wakeboardingmag.com/sites/wakeboardingmag.com/files/styles/large_1x_/public/import/embedded/files/2010/06/wakesport-ranch-500x375.jpg?itok=Xz38JnZc
+phone: (817)-366-7473
+
+
+Barefoot Ski Ranch
+http://www.bsrcablepark.com/
+5347 Old Mexia Rd, Waco, Tx 76705
+M-F: 12pm - 8pm
+Sat: 12pm - 8pm
+Sun: 12pm - 8pm
+2hr: $25
+4hr: $30
+Helmet: $6
+Vest: $6
+Beg Brd: $12
+Cbl Brd: $20
+Camps: Yes
+Lessons: Yes
+pic: http://cdnimg.in/wp-content/uploads/2015/06/Aerial-2.jpg?cfaea8
+phone: (254)-227-6388
+
+
+Vision Quest ATX
+http://questatx.com/
+10815 Fm 1625, Austin, TX 78747
+M-F: 9am - Dark
+Sat: 9am - Dark
+Sun: 12pm - Dark
+2hr: $30
+4hr: $35
+Helmet: $5
+Vest: $5
+Beg Brd: $5
+Cbl Brd: $20
+Camps: Yes
+Lessons: Yes
+pic: http://questatx.com/wp-content/uploads/2015/04/cropped-QuestPark31.jpg
+phone: (512)-298-9370
+
+
+Texas Ski Ranch
+http://texasskiranch.com/
+6700 IH 35 North New Braunfels, TX 78130
+M-F: 9am - 10pm
+Sat: 9am - 10pm
+Sun: 11am - 6pm
+2hr: $25
+4hr: $31
+Helmet: $5
+Vest: $5
+Beg Brd: $15
+Cbl Brd: $22
+Camps: Yes
+Lessons: Yes
+pic: http://4f69c8c4bba3dbce2a55-b875987a2e8f10250e44bc13f670ac4a.r10.cf2.rackcdn.com/335d9a17e8e707e348c8879ee0a8eeac-ef43e910408a8a919c103e4dff7b48a5.jpg
+phone: (830)-627-2843
+
+
+Wake Nation - Houston
+http://wakenationhouston.com/
+4411 County Road 418 Rosharon, TX 77583
+M-F: 11am - 8pm
+Sat: 9am - 8pm
+Sun: 12pm - 8pm
+2hr: $30
+4hr: $35
+Helmet: $7
+Vest: $7
+Beg Brd: $13
+Cbl Brd: $13
+Camps: Yes
+Lessons: Yes
+pic: http://www.liquidforce.com/img/camps/camps-parks-logos-wakenation-hou.gif
+phone: (281)-431-4444
+
+
+Next Level Ride
+http://nextlevelrideaustin.com/
+5400 TX-71 Del Valle, TX 78617
+M-F: 12pm - 8pm
+Sat: 10pm - 8pm
+Sun: 10am - 8pm
+2hr: $25
+4hr: $30
+Helmet: unknown
+Vest: unknown
+Beg Brd: unknown
+Cbl Brd: unknown
+Camps: No
+Lessons: No
+pic: https://cmga360fitness.files.wordpress.com/2015/09/next-level-ride-skyview.jpg
+phone: (512)-915-9056
+
+
+Hangar 9 Wake Park
+http://www.hangar9wakepark.com/
+15110 I-45 South, Conroe, Texas 77384
+M-F: 12pm - 8pm
+Sat: 12pm - 8pm
+Sun: 12pm - 8pm
+2hr: $35
+4hr: $40
+Helmet: $6
+Vest: $6
+Beg Brd: $12
+Cbl Brd: $12
+Camps: Yes
+Lessons: Yes
+pic: http://www.hangar9wakepark.com/_beta/wp-content/uploads/2016/03/park-overviewpsd.jpg
+phone: (936)-271-1101
+
+
