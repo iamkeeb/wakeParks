@@ -1,4 +1,4 @@
-{"wake parks":[
+[
   {"name":"Hydrous Wake Park - Allen", "website":"http://hydrouswakeparks.com/",
     "address":"580 N Cedar Dr, Allen, TX 75002", "m-f":"12pm - Dark", "sat":"12pm - Dark",
     "sun":"12pm - Dark", "2hr":"$30", "4hr":"$50", "helmet":"$5", "vest":"$5", "beg brd":"$5",
@@ -57,4 +57,4 @@
     "cbl brd":"$12", "camps":"Yes", "lessons":"Yes",
     "pic":"http://www.hangar9wakepark.com/_beta/wp-content/uploads/2016/03/park-overviewpsd.jpg",
     "phone":"(936)-271-1101"}
-]}
+]

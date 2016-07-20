@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.kissesfrme_20.wakeparks.cable_park">
+    tools:context="com.example.kissesfrme_20.wakeparks.cable_park"
+    android:background="#ffffff">
 
     <ImageView
         android:layout_width="fill_parent"
@@ -18,11 +19,14 @@
         android:contentDescription="@string/cable_park_picture" />
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/park_info"
         android:id="@+id/textView"
         android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:linksClickable="true"
+        android:textIsSelectable="true" />
 
 </RelativeLayout>

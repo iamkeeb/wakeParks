@@ -6,9 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.ArrayMap;
 import android.util.JsonReader;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 public class cable_park extends AppCompatActivity {
+    private static final String TAG = "Cable Park";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +34,18 @@ public class cable_park extends AppCompatActivity {
         if (extras != null) {
            park_name = extras.getString("park_name");
         }
-        Map<String, String> parks;
+        HashMap<String, String> park = new HashMap<String,String>();;
         try {
-            parks = readJsonStream(new FileInputStream("wake_parks.json"), park_name);
+            park = readJsonStream(getAssets().open("wake_parks.json"), park_name);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
         setContentView(R.layout.activity_cable_park);
+
+        TextView t = (TextView)findViewById(R.id.textView);
+
+        t.setText(ParkOutput(park));
     }
 
     @Override
@@ -68,25 +74,64 @@ public class cable_park extends AppCompatActivity {
         }
     }
 
-    public Map<String, String> readJsonStream(InputStream in, String park_name) throws IOException {
+    public HashMap<String, String> readJsonStream(InputStream in, String park_name) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
         try {
-            Map<String, String> json = new HashMap();
-            json.put("park_name", park_name);
+            HashMap<String, String> json = new HashMap<String,String>();
             reader.beginArray();
-            while (!reader.nextString().equals(park_name)) {
-                reader.endArray();
-                reader.beginArray();
-            }
+            boolean done = false;
             while (reader.hasNext()) {
-                String key = reader.nextName();
-                String value = reader.nextString();
-                json.put(key, value);
+                reader.beginObject();
+                if (reader.hasNext()) {
+                    String key = reader.nextName();
+                    String value = reader.nextString();
+                    Log.v(TAG, value);
+                    if (!done && value.equals(park_name)) {
+                        done = true;
+                        json.put(key, value);
+                        Log.v(TAG, key);
+                        while (reader.hasNext()) {
+                            key = reader.nextName();
+                            value = reader.nextString();
+                            json.put(key, value);
+                            Log.v(TAG, key);
+                            Log.v(TAG, value);
+                        }
+                    }
+                    else
+                        while (reader.hasNext()){
+                            reader.nextName();
+                            reader.nextString();
+                        }
+
+                }
+                reader.endObject();
             }
             reader.endArray();
             return json;
         } finally {
             reader.close();
         }
+    }
+
+
+    public String ParkOutput(HashMap<String, String> map) {
+        String output = "";
+        output += map.get("name") + "\n";
+        output += map.get("website") + "\n";
+        output += map.get("phone") + "\n";
+        output += map.get("address") + "\n";
+        output += "M - F: " + map.get("m-f") + "\n";
+        output += "Saturday: " + map.get("sat") + "\n";
+        output += "Sunday: " + map.get("sun") + "\n";
+        output += "2 Hours: " + map.get("2hrs") + "\n";
+        output += "4 Hours: " + map.get("4hrs") + "\n";
+        output += "Helmet: " + map.get("helmet") + "\n";
+        output += "Vest: " + map.get("vest") + "\n";
+        output += "Beginner Board: " + map.get("beg brd") + "\n";
+        output += "CBL Board: " + map.get("cbl brd") + "\n";
+        output += "Camps: " + map.get("camps") + "\n";
+        output += "Lessons: " + map.get("lessons") + "\n";
+        return output;
     }
 }
