@@ -1,6 +1,9 @@
 package com.example.kissesfrme_20.wakeparks;
 
 import android.app.FragmentManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
@@ -8,10 +11,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.HashMap;
 
 public class cable_park extends AppCompatActivity {
@@ -38,6 +43,19 @@ public class cable_park extends AppCompatActivity {
         TextView t = (TextView)findViewById(R.id.textView);
 
         t.setText(ParkOutput(park));
+
+        Bitmap bmp = null;
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            URL url = new URL(park.get("pic"));
+            bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+            ((ImageView)findViewById(R.id.imageView2)).setImageBitmap(bmp);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Log.v(TAG, "Done");
     }
 
     @Override
@@ -77,17 +95,13 @@ public class cable_park extends AppCompatActivity {
                 if (reader.hasNext()) {
                     String key = reader.nextName();
                     String value = reader.nextString();
-                    Log.v(TAG, value);
                     if (!done && value.equals(park_name)) {
                         done = true;
                         json.put(key, value);
-                        Log.v(TAG, key);
                         while (reader.hasNext()) {
                             key = reader.nextName();
                             value = reader.nextString();
                             json.put(key, value);
-                            Log.v(TAG, key);
-                            Log.v(TAG, value);
                         }
                     }
                     else
