@@ -1,7 +1,11 @@
 package com.example.kissesfrme_20.wakeparks;
 
+import android.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 public class welcome_page extends AppCompatActivity {
 
@@ -10,4 +14,31 @@ public class welcome_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        FragmentManager fm = getFragmentManager();
+        switch (item.getItemId()) {
+            case R.id.information:
+                // Information stuff here
+                return true;
+            case R.id.profile:
+                // Profile stuff here
+                return true;
+            case R.id.add_park:
+                // Add a Park stuff here
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }
