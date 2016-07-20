@@ -1,26 +1,18 @@
 package com.example.kissesfrme_20.wakeparks;
 
 import android.app.FragmentManager;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.ArrayMap;
 import android.util.JsonReader;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
-
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class cable_park extends AppCompatActivity {
     private static final String TAG = "Cable Park";
@@ -103,7 +95,6 @@ public class cable_park extends AppCompatActivity {
                             reader.nextName();
                             reader.nextString();
                         }
-
                 }
                 reader.endObject();
             }
