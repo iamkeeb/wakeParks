@@ -6,13 +6,27 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.view.View.OnClickListener;
+import android.view.View;
+import android.content.Intent;
 
 public class welcome_page extends AppCompatActivity {
+
+    Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
+
+        button2 = (Button) findViewById(R.id.button2);
+    }
+
+    /*Called when user clicks Not Now*/
+    public void notNow(View view) {
+        Intent intent = new Intent(this, find_park.class);
+        startActivity(intent);
     }
 
     @Override
@@ -22,6 +36,8 @@ public class welcome_page extends AppCompatActivity {
         inflater.inflate(R.menu.options_menu, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -18,6 +18,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".cable_park"></activity>
+        <activity
+            android:name=".find_park"
+            android:label="@string/find_park_activity"
+            android:parentActivityName=".welcome_page">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".welcome_page"/>
+        </activity>
     </application>
 
 </manifest>
