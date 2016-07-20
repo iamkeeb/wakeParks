@@ -26,6 +26,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".welcome_page"/>
         </activity>
+        <activity
+            android:name=".park_list"
+            android:label="@string/list_park_activity"
+            android:parentActivityName=".find_park">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".find_park"/>
+        </activity>
     </application>
 
 </manifest>

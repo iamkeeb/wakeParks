@@ -10,4 +10,5 @@
     <string name="cable_park_picture">Cable Park picture</string>
     <string name="park_info">park info</string>
     <string name="find_park_activity">find park</string>
+    <string name="list_park_activity">list park</string>
 </resources>
