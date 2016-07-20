@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class cable_park extends AppCompatActivity {
@@ -86,8 +87,8 @@ public class cable_park extends AppCompatActivity {
 
     public HashMap<String, String> readJsonStream(InputStream in, String park_name) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
+        HashMap<String, String> json = new HashMap<String,String>();
         try {
-            HashMap<String, String> json = new HashMap<String,String>();
             reader.beginArray();
             boolean done = false;
             while (reader.hasNext()) {
@@ -113,12 +114,39 @@ public class cable_park extends AppCompatActivity {
                 reader.endObject();
             }
             reader.endArray();
-            return json;
         } finally {
             reader.close();
         }
+        return json;
     }
 
+    public ArrayList<HashMap<String,String>> readJsonAll (InputStream in) throws IOException {
+        JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
+        ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
+        try {
+            HashMap<String, String> json = new HashMap<String,String>();
+            reader.beginArray();
+            // Get each park
+            while (reader.hasNext()) {
+                reader.beginObject();
+                //Iterate through each park
+                if (reader.hasNext()) {
+                    json = new HashMap<String,String>();
+                    while (reader.hasNext()) {
+                        String key = reader.nextName();
+                        String value = reader.nextString();
+                        json.put(key, value);
+                    }
+                    list.add(json);
+                }
+                reader.endObject();
+            }
+            reader.endArray();
+        } finally {
+            reader.close();
+        }
+        return list;
+    }
 
     public String ParkOutput(HashMap<String, String> map) {
         String output = "";
