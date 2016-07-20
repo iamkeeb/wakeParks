@@ -1,0 +1,30 @@
+a) Team Members
+	Clark Clayton 
+	cc47624
+
+	Amanda Keebler 
+	amk2843
+
+	Alexander Adams 
+	aga626
+
+b) Special Instructions
+	Requires location services to show nearby parks and give directions
+
+c) Features
+	Welcome page 
+		Includes the picture and two buttons. Only the "not now" button works
+	Find a park page 
+		Allows list view, map view, search view
+	Database with park info 
+		Just includes Texas Parks, Stored on the app because the info is unchangable right now.
+	Chosen Cable Park
+		Displays static information, also displays distance from the park and routing information
+	Options menu
+		Gives information about the app, it creators, how to use the app, etc
+
+d) Classes we wrote
+
+
+e) Classes we used that others wrote
+	
