@@ -17,14 +17,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/wake_parks"
-        android:contentDescription="Wake Parks image" />
+        android:contentDescription="@string/wake_parks_image" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login"
         android:id="@+id/button"
-        android:contentDescription="Button leading to login page"
+        android:contentDescription="@string/button_leading_to_login_page"
         style="@style/AppTheme"
         android:clickable="true"
         android:layout_below="@+id/imageView"
@@ -38,10 +38,10 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Not Now"
+        android:text="@string/not_now"
         android:id="@+id/button2"
         android:layout_marginTop="67dp"
-        android:contentDescription="Button leading to Find a Park page"
+        android:contentDescription="@string/button_leading_to_find_a_park_page"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
         android:clickable="true"
