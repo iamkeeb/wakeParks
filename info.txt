@@ -10,18 +10,19 @@ a) Team Members
 
 b) Special Instructions
 	Requires location services to show nearby parks and give directions--download google play services
+	Need location services on
 
 c) Features
 	Welcome page 
 		Includes the picture and two buttons. Only the "not now" button works
 	Find a park page 
-		Allows list view, map view, search view
+		Allows list view and map view
 	Database with park info 
 		Just includes Texas Parks, Stored on the app because the info is unchangable right now.
 	Chosen Cable Park
-		Displays static information, also displays distance from the park and routing information
+		Displays static information, also opens up google maps with routing information
 	Options menu
-		Gives information about the app, it creators, how to use the app, etc
+		Gives information about how to use the app and its purposes 
 
 d) Classes we wrote
 	welcome_page.java 
@@ -33,7 +34,7 @@ d) Classes we wrote
 		onCreate(Bundle savedInstanceState)
 		parkSelected(String name)
 		readJsonAll
-	cable_park
+	cable_park.java
 		onCreate(Bundle savedInstanceState)
 		onCreateOptionsMenu(Menu menu)
 		onOptionsItemSelected(MenuItem item)
@@ -41,11 +42,16 @@ d) Classes we wrote
 		readJsonAll(InputStream in)
 		ParkOutput(HashMap<String, String> map)
 		Route(View view)
-	info_page
+	info_page.java
 		onCreate(Bundle savedInstanceState)
-	park_map
-
+	park_map.java
+		readJsonAll
+		onMapReady()
+		
+	
 e) Classes we used that others wrote
 	park_list.java
-		onItemClick
+		onItemClick - from the android tutorials online
+	park_map.java
+		onCreate() auto-generated
 	
