@@ -85,6 +85,7 @@ public class cable_park extends AppCompatActivity {
         }
     }
 
+    // Reads in a Json file and outputs a map of the selected park
     public HashMap<String, String> readJsonStream(InputStream in, String park_name) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
         HashMap<String, String> json = new HashMap<String,String>();
@@ -120,6 +121,7 @@ public class cable_park extends AppCompatActivity {
         return json;
     }
 
+    //Reads in a Json file and outputs a list of maps for each park
     public ArrayList<HashMap<String,String>> readJsonAll (InputStream in) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
         ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
@@ -148,6 +150,7 @@ public class cable_park extends AppCompatActivity {
         return list;
     }
 
+    // Takes in a park map and outputs a nicer format
     public String ParkOutput(HashMap<String, String> map) {
         String output = "";
         output += map.get("name") + "\n";
