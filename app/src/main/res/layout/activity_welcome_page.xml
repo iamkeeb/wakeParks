@@ -25,7 +25,6 @@
         android:text="@string/login"
         android:id="@+id/button"
         android:contentDescription="@string/button_leading_to_login_page"
-        style="@style/AppTheme"
         android:clickable="true"
         android:layout_below="@+id/imageView"
         android:layout_alignParentRight="true"
