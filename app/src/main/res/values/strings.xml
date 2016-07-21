@@ -13,4 +13,6 @@
     <string name="list_park_activity">list park</string>
     <string name="route_me">Route Me</string>
     <string name="leads_to_map_activity">leads to map activity</string>
+    <string name="title_activity_park_map">Map</string>
+    <string name="map_park_activity">map park</string>
 </resources>
