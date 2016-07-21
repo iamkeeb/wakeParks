@@ -106,12 +106,14 @@ public class park_list extends find_park{
         return super.onOptionsItemSelected(item);
     }
 
+    // Starts the cable park activity and loads the correct park info
     public void parkSelected(String name) {
         Intent intent = new Intent(this, cable_park.class);
         intent.putExtra("park_name", name);
         startActivity(intent);
     }
 
+    //Reads in a Json file and outputs a list of maps for each park
     public ArrayList<HashMap<String,String>> readJsonAll (InputStream in) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
         ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
