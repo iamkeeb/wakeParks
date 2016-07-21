@@ -1,8 +1,10 @@
 package com.example.kissesfrme_20.wakeparks;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +13,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -22,6 +30,12 @@ import java.util.HashMap;
 
 public class cable_park extends AppCompatActivity {
     private static final String TAG = "Cable Park";
+    private String lat, lon;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +44,10 @@ public class cable_park extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String park_name = "Hydrous Wake Park - Allen";
         if (extras != null) {
-           park_name = extras.getString("park_name");
+            park_name = extras.getString("park_name");
         }
-        HashMap<String, String> park = new HashMap<String,String>();;
+        HashMap<String, String> park = new HashMap<String, String>();
+        ;
         try {
             park = readJsonStream(getAssets().open("wake_parks.json"), park_name);
         } catch (IOException e) {
@@ -41,9 +56,12 @@ public class cable_park extends AppCompatActivity {
 
         setContentView(R.layout.activity_cable_park);
 
-        TextView t = (TextView)findViewById(R.id.textView);
+        TextView t = (TextView) findViewById(R.id.textView);
 
         t.setText(ParkOutput(park));
+
+        lat = park.get("latitude");
+        lon = park.get("longitude");
 
         Bitmap bmp = null;
         try {
@@ -52,11 +70,14 @@ public class cable_park extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
             URL url = new URL(park.get("pic"));
             bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-            ((ImageView)findViewById(R.id.imageView2)).setImageBitmap(bmp);
+            ((ImageView) findViewById(R.id.imageView2)).setImageBitmap(bmp);
         } catch (Exception e) {
             e.printStackTrace();
         }
         Log.v(TAG, "Done");
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
@@ -88,7 +109,7 @@ public class cable_park extends AppCompatActivity {
     // Reads in a Json file and outputs a map of the selected park
     public HashMap<String, String> readJsonStream(InputStream in, String park_name) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
-        HashMap<String, String> json = new HashMap<String,String>();
+        HashMap<String, String> json = new HashMap<String, String>();
         try {
             reader.beginArray();
             boolean done = false;
@@ -105,9 +126,8 @@ public class cable_park extends AppCompatActivity {
                             value = reader.nextString();
                             json.put(key, value);
                         }
-                    }
-                    else
-                        while (reader.hasNext()){
+                    } else
+                        while (reader.hasNext()) {
                             reader.nextName();
                             reader.nextString();
                         }
@@ -122,18 +142,18 @@ public class cable_park extends AppCompatActivity {
     }
 
     //Reads in a Json file and outputs a list of maps for each park
-    public ArrayList<HashMap<String,String>> readJsonAll (InputStream in) throws IOException {
+    public ArrayList<HashMap<String, String>> readJsonAll(InputStream in) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
-        ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
+        ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
         try {
-            HashMap<String, String> json = new HashMap<String,String>();
+            HashMap<String, String> json = new HashMap<String, String>();
             reader.beginArray();
             // Get each park
             while (reader.hasNext()) {
                 reader.beginObject();
                 //Iterate through each park
                 if (reader.hasNext()) {
-                    json = new HashMap<String,String>();
+                    json = new HashMap<String, String>();
                     while (reader.hasNext()) {
                         String key = reader.nextName();
                         String value = reader.nextString();
@@ -170,4 +190,14 @@ public class cable_park extends AppCompatActivity {
         output += "Lessons: " + map.get("lessons") + "\n";
         return output;
     }
+
+    // Opens the park's latitude and longitude in Google Maps
+    public void Route(View view) {
+        String loc = "geo:" + lat + "," + lon;
+        Uri gmmIntentUri = Uri.parse(loc);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
 }
