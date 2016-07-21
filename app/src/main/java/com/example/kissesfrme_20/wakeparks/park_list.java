@@ -15,6 +15,9 @@ import android.widget.Toast;
 import android.widget.AdapterView;
 import android.view.View;
 import android.widget.AdapterView.OnItemClickListener;
+import java.util.Map;
+import java.util.List;
+import android.widget.SimpleAdapter;
 
 /**
  * Created by kissesfrme_20 on 7/20/16.
@@ -37,6 +40,7 @@ public class park_list extends find_park{
 
         String[] names = new String[10];
         String[] addresses = new String[10];
+        List<Map<String, String>> data = new ArrayList<Map<String, String>>();
 
         for(int i = 0; i < parks.size(); i++) {
             String name = "";
@@ -45,13 +49,24 @@ public class park_list extends find_park{
             String address = "";
             address += parks.get(i).get("address");
             addresses[i] = address;
+
+            Map<String, String> allthings = new HashMap<String, String>(2);
+            allthings.put("name", name);
+            allthings.put("address", address);
+            data.add(allthings);
         }
 
         setContentView(R.layout.park_list_view);
         listView = (ListView) findViewById(R.id.listView);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, names);
+        SimpleAdapter adapter = new SimpleAdapter(this, data,
+                android.R.layout.simple_list_item_2,
+                new String[] {"name", "address"},
+                new int[] {android.R.id.text1,
+                        android.R.id.text2});
+
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        //        android.R.layout.simple_list_item_1, android.R.id.text1, names);
         listView.setAdapter(adapter);
 
         // ListView Item Click Listener
