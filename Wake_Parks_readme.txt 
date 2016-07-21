@@ -1,0 +1,3 @@
+REQUIREMENTS:
+
+Must download google play services package under extras in order for GPS/Map option to work in the application, otherwise, application will fail.
