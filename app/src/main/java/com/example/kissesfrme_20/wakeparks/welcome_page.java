@@ -28,6 +28,8 @@ public class welcome_page extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -40,10 +42,12 @@ public class welcome_page extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         FragmentManager fm = getFragmentManager();
         switch (item.getItemId()) {
             case R.id.information:
                 // Information stuff here
+                startActivity(new Intent(this, info_page.class));
                 return true;
             case R.id.profile:
                 // Profile stuff here

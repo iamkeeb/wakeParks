@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".cable_park"></activity>
+        <activity android:name=".info_page"></activity>
         <activity
             android:name=".find_park"
             android:label="@string/find_park_activity"
