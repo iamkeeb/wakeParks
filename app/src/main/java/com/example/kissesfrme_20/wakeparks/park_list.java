@@ -1,5 +1,6 @@
 package com.example.kissesfrme_20.wakeparks;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.view.MenuItem;
@@ -72,6 +73,7 @@ public class park_list extends find_park{
                         "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
                         .show();
 
+                parkSelected(itemValue);
             }
 
         });
@@ -87,6 +89,12 @@ public class park_list extends find_park{
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void parkSelected(String name) {
+        Intent intent = new Intent(this, cable_park.class);
+        intent.putExtra("park_name", name);
+        startActivity(intent);
     }
 
     public ArrayList<HashMap<String,String>> readJsonAll (InputStream in) throws IOException {
