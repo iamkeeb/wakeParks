@@ -160,8 +160,8 @@ public class cable_park extends AppCompatActivity {
         output += "M - F: " + map.get("m-f") + "\n";
         output += "Saturday: " + map.get("sat") + "\n";
         output += "Sunday: " + map.get("sun") + "\n";
-        output += "2 Hours: " + map.get("2hrs") + "\n";
-        output += "4 Hours: " + map.get("4hrs") + "\n";
+        output += "2 Hours: " + map.get("2hr") + "\n";
+        output += "4 Hours: " + map.get("4hr") + "\n";
         output += "Helmet: " + map.get("helmet") + "\n";
         output += "Vest: " + map.get("vest") + "\n";
         output += "Beginner Board: " + map.get("beg brd") + "\n";
