@@ -60,14 +60,14 @@ public class park_list extends find_park{
         setContentView(R.layout.park_list_view);
         listView = (ListView) findViewById(R.id.listView);
 
-        /*SimpleAdapter adapter = new SimpleAdapter(this, data,
+        SimpleAdapter adapter = new SimpleAdapter(this, data,
                 android.R.layout.simple_list_item_2,
                 new String[] {"name", "address"},
                 new int[] {android.R.id.text1,
-                        android.R.id.text2});*/
+                        android.R.id.text2});
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, names);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        //        android.R.layout.simple_list_item_1, android.R.id.text1, names);
         listView.setAdapter(adapter);
 
         // ListView Item Click Listener
