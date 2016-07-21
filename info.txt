@@ -9,7 +9,7 @@ a) Team Members
 	aga626
 
 b) Special Instructions
-	Requires location services to show nearby parks and give directions
+	Requires location services to show nearby parks and give directions--download google play services
 
 c) Features
 	Welcome page 
@@ -24,7 +24,17 @@ c) Features
 		Gives information about the app, it creators, how to use the app, etc
 
 d) Classes we wrote
-
+	welcome_page.java 
+		public void notNow(View view)
+	find_park.java
+		listParks(View view)
+		parkMaps(View view)
+	park_list.java
+		onCreate(Bundle savedInstanceState)
+		parkSelected(String name)
+		readJsonAll
 
 e) Classes we used that others wrote
+	park_list.java
+		onItemClick
 	
