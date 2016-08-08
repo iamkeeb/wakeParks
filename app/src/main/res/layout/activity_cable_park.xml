@@ -16,7 +16,6 @@
         android:id="@+id/scrollView"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="false"
         android:clickable="true">
 
         <LinearLayout
@@ -29,6 +28,26 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView2"
                 android:contentDescription="@string/cable_park_picture" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/park_name"
+                android:id="@+id/textView4"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingBar"
+                android:layout_gravity="center_horizontal"
+                android:rating="3.5"
+                android:theme="@style/AppTheme"
+                android:clickable="false"
+                android:stepSize="0.5"
+                style="@style/AppTheme" />
 
             <TextView
                 android:layout_width="fill_parent"

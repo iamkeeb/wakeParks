@@ -56,11 +56,15 @@ public class cable_park extends AppCompatActivity {
 
         setContentView(R.layout.activity_cable_park);
 
+        TextView n = (TextView) findViewById(R.id.textView4);
+
+        n.setText(park_name);
+
+
         TextView t = (TextView) findViewById(R.id.textView);
 
         t.setText(ParkOutput(park));
 
-        name = park_name;
         lat = park.get("latitude");
         lon = park.get("longitude");
 
@@ -174,7 +178,6 @@ public class cable_park extends AppCompatActivity {
     // Takes in a park map and outputs a nicer format
     public String ParkOutput(HashMap<String, String> map) {
         String output = "";
-        output += map.get("name") + "\n";
         output += map.get("website") + "\n";
         output += map.get("phone") + "\n";
         output += map.get("address") + "\n";
