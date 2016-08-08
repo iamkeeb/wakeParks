@@ -73,12 +73,10 @@ public class park_map extends FragmentActivity implements OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(austin));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(6));
 
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
-        {
+        googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
-            public boolean onMarkerClick(Marker m) {
+            public void onInfoWindowClick(Marker m) {
                 parkSelected(m.getTitle());
-                return true;
             }
         });
     }
