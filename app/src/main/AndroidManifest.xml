@@ -39,6 +39,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".welcome_page" />
         </activity>
+        <activity android:name=".login_page"></activity>
         <activity
             android:name=".park_list"
             android:label="@string/list_park_activity"
