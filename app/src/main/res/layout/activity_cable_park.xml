@@ -47,7 +47,7 @@
                 android:theme="@style/AppTheme"
                 android:clickable="false"
                 android:stepSize="0.5"
-                style="@style/AppTheme" />
+                style="@android:style/Widget.Holo.RatingBar" />
 
             <TextView
                 android:layout_width="fill_parent"
