@@ -1,6 +1,7 @@
 package com.example.kissesfrme_20.wakeparks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.support.v4.app.FragmentActivity;
@@ -13,6 +14,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
@@ -70,6 +72,22 @@ public class park_map extends FragmentActivity implements OnMapReadyCallback {
         LatLng austin = new LatLng(30.2849, -97.7341);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(austin));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(6));
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
+        {
+            @Override
+            public boolean onMarkerClick(Marker m) {
+                parkSelected(m.getTitle());
+                return true;
+            }
+        });
+    }
+
+    // Starts the cable park activity and loads the correct park info
+    public void parkSelected(String name) {
+        Intent intent = new Intent(this, cable_park.class);
+        intent.putExtra("park_name", name);
+        startActivity(intent);
     }
 
     public ArrayList<HashMap<String,String>> readJsonAll (InputStream in) throws IOException {
