@@ -15,4 +15,10 @@
     <string name="leads_to_map_activity">leads to map activity</string>
     <string name="title_activity_park_map">Map</string>
     <string name="map_park_activity">map park</string>
+    <string name="ratings">Ratings</string>
+    <string name="ratings_button">ratings button</string>
+    <string name="edit_information">Edit Information</string>
+    <string name="user_photos">User Photos</string>
+    <string name="user_photos_button">User Photos Button</string>
+    <string name="edit_information_button">Edit Information Button</string>
 </resources>

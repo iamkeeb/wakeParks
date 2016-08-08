@@ -15,7 +15,9 @@
         android:layout_height="fill_parent"
         android:id="@+id/scrollView"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="false"
+        android:clickable="true">
 
         <LinearLayout
             android:orientation="vertical"
@@ -51,6 +53,42 @@
                 android:textColor="#ffffff"
                 android:background="@android:drawable/dialog_holo_dark_frame"
                 android:onClick="Route"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_photos"
+                android:id="@+id/button6"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:clickable="true"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:contentDescription="@string/user_photos_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ratings"
+                android:id="@+id/button5"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:clickable="true"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:contentDescription="@string/ratings_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_information"
+                android:id="@+id/button7"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:contentDescription="@string/edit_information_button" />
 
         </LinearLayout>
     </ScrollView>
