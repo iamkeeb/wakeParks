@@ -21,4 +21,8 @@
     <string name="user_photos">User Photos</string>
     <string name="user_photos_button">User Photos Button</string>
     <string name="edit_information_button">Edit Information Button</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="new_user">New User</string>
+    <string name="keep_me_logged_in">Keep me logged in</string>
 </resources>

@@ -22,6 +22,12 @@ public class welcome_page extends AppCompatActivity {
         button2 = (Button) findViewById(R.id.button2);
     }
 
+    /*Called when user clicks Login*/
+    public void login(View view) {
+        Intent intent = new Intent(this, login_page.class);
+        startActivity(intent);
+    }
+
     /*Called when user clicks Not Now*/
     public void notNow(View view) {
         Intent intent = new Intent(this, find_park.class);
