@@ -14,18 +14,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.AdapterView;
 import android.view.View;
 import android.widget.AdapterView.OnItemClickListener;
-import java.util.Map;
-import java.util.List;
-import android.widget.SimpleAdapter;
 
 /**
  * Created by kissesfrme_20 on 7/20/16.
@@ -37,6 +32,7 @@ public class park_list extends find_park{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.park_list_view);
 
         //Bundle extras = getIntent().getExtras();
         ArrayList<HashMap<String, String>> parks = new ArrayList<HashMap<String,String>>();
@@ -51,7 +47,6 @@ public class park_list extends find_park{
             park_list.add(new Park(h.get("name"), h.get("rating")));
         }
 
-        setContentView(R.layout.park_list_view);
         listView = (ListView) findViewById(R.id.listView);
 
         RatingAdapter adapter = new RatingAdapter(this, park_list);
