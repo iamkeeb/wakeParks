@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
@@ -60,6 +61,9 @@ public class cable_park extends AppCompatActivity {
 
         n.setText(park_name);
 
+        RatingBar r = (RatingBar) findViewById(R.id.ratingBar);
+
+        r.setRating(Float.parseFloat(park.get("rating")));
 
         TextView t = (TextView) findViewById(R.id.textView);
 
