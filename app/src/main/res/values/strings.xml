@@ -23,7 +23,7 @@
     <string name="edit_information_button">Edit Information Button</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="new_user">New User</string>
+    <string name="new_user">Register New User</string>
     <string name="keep_me_logged_in">Keep me logged in</string>
     <string name="park_name">Park Name</string>
 </resources>
