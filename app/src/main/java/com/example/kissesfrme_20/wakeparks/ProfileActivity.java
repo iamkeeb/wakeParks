@@ -64,4 +64,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         Intent intent = new Intent(this, park_map.class);
         startActivity(intent);
     }
+
+    public void searchParks(View view) {
+        Intent intent = new Intent(this, park_search.class);
+        startActivity(intent);
+    }
 }
