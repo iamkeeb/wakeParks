@@ -50,11 +50,11 @@ public class review_page extends AppCompatActivity {
 
         ArrayList<Review> review_list = new ArrayList<Review>();
 
-        Review test1 = new Review("This feature works!!!", 5);
+        Review test1 = new Review(park_name, "This feature works!!!", 5);
         review_list.add(test1);
-        Review test2 = new Review(park_name, 5);
+        Review test2 = new Review(park_name, park_name, 5);
         review_list.add(test2);
-        Review test3 = new Review("Now for a really really really long test review because people will be writing a ton of useless information in their reviews and we want to make sure it doesnt look like crap in our activity page because we are such good coders and want a good grade on this assignment. Kthxbai.", 1.5f);
+        Review test3 = new Review(park_name, "Now for a really really really long test review because people will be writing a ton of useless information in their reviews and we want to make sure it doesnt look like crap in our activity page because we are such good coders and want a good grade on this assignment. Kthxbai.", 1.5f);
         review_list.add(test3);
 
         listView = (ListView) findViewById(R.id.listView);
@@ -66,7 +66,7 @@ public class review_page extends AppCompatActivity {
 
     public void add_Review(View view) {
         new AlertDialog.Builder(this)
-                .setTitle("User Review")
+                .setTitle(park_name)
                 .setMessage("Rate and Review the Park!")
                 .setView(R.layout.review_element)
                 .setPositiveButton("Submit", new DialogInterface.OnClickListener() {
@@ -107,15 +107,18 @@ public class review_page extends AppCompatActivity {
 
     /* Review object to be used in the RatingAdapter */
     class Review {
+        String park;
         String text;
         float rating;
 
-        Review(String t, float r) {
+        Review(String p, String t, float r) {
+            park = p;
             text = t;
             rating = r;
         }
 
-        Review(String t, String r) {
+        Review(String p, String t, String r) {
+            park = p;
             text = t;
             rating = Float.parseFloat(r);
         }
