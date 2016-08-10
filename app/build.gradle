@@ -18,6 +18,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
 }
 
 dependencies {
@@ -29,8 +34,9 @@ dependencies {
     compile 'com.google.android.gms:play-services-appindexing:9.4.0'
     compile 'com.google.android.gms:play-services:9.4.0'
     compile 'com.google.firebase:firebase-core:9.4.0'
+    compile 'com.google.firebase:firebase-storage:9.4.0'
     compile 'com.google.firebase:firebase-auth:9.4.0'
-
+    compile 'com.google.firebase:firebase-database:9.2.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

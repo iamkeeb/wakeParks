@@ -14,12 +14,15 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
 public class review_page extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase database;
     ListView listView;
     String park_name;
 
@@ -33,7 +36,8 @@ public class review_page extends AppCompatActivity {
         if(firebaseAuth.getCurrentUser() == null) {
             ((ViewGroup) add_review.getParent()).removeView(add_review);
         }
-
+        // Use Firebase to populate the list.
+        // Firebase.setAndroidContext(this);
 
         Bundle extras = getIntent().getExtras();
         park_name = "Hydrous Wake Park - Allen";
