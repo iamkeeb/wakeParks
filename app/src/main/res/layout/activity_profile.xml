@@ -59,7 +59,8 @@
             android:background="@color/colorBlack"
             android:id="@+id/button15"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.20" />
+            android:layout_weight="0.20"
+            android:onClick="searchParks" />
 
         <Button
             android:layout_width="match_parent"
