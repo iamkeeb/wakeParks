@@ -17,15 +17,19 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class review_page extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    private FirebaseDatabase database;
+    DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference mReviewRef = mRootRef.child("reviews");
     ListView listView;
     String park_name;
 
@@ -41,6 +45,7 @@ public class review_page extends AppCompatActivity {
         }
         // Use Firebase to populate the list.
         // Firebase.setAndroidContext(this);
+
 
         Bundle extras = getIntent().getExtras();
         park_name = "Hydrous Wake Park - Allen";
@@ -62,6 +67,23 @@ public class review_page extends AppCompatActivity {
         RatingAdapter adapter = new RatingAdapter(this, review_list);
 
         listView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        mReviewRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String text = dataSnapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void add_Review(View view) {
