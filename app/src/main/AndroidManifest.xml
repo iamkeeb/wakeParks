@@ -94,7 +94,8 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".review_page"></activity>
+        <activity android:name=".review_page" />
+        <activity android:name=".favorites_list"></activity>
     </application>
 
 </manifest>

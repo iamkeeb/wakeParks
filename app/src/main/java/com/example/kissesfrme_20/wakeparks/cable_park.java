@@ -14,13 +14,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,6 +34,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class cable_park extends AppCompatActivity {
+
     private static final String TAG = "Cable Park";
     private String lat, lon, park_name;
     /**
@@ -48,7 +53,7 @@ public class cable_park extends AppCompatActivity {
             park_name = extras.getString("park_name");
         }
         HashMap<String, String> park = new HashMap<String, String>();
-        ;
+
         try {
             park = readJsonStream(getAssets().open("wake_parks.json"), park_name);
         } catch (IOException e) {
@@ -213,5 +218,9 @@ public class cable_park extends AppCompatActivity {
         Intent intent = new Intent(this, review_page.class);
         intent.putExtra("park_name", park_name);
         startActivity(intent);
+    }
+
+    public void Favorite(View view) {
+        Toast.makeText(getApplicationContext(), "Added to Favorites", Toast.LENGTH_SHORT).show();
     }
 }

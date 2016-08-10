@@ -88,6 +88,7 @@
             android:background="@color/colorBlack"
             android:id="@+id/button4"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.25" />
+            android:layout_weight="0.25"
+            android:onClick="favorites"/>
     </LinearLayout>
 </LinearLayout>

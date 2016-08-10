@@ -69,4 +69,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         Intent intent = new Intent(this, park_search.class);
         startActivity(intent);
     }
+
+    public void favorites(View view) {
+        Intent intent = new Intent(this, favorites_list.class);
+        startActivity(intent);
+    }
 }

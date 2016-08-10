@@ -95,7 +95,8 @@
             android:background="@color/colorBlack"
             android:id="@+id/button18"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.20" />
+            android:layout_weight="0.20"
+            android:onClick="favorites" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

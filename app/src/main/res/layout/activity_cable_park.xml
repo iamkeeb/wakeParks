@@ -76,6 +76,19 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/favorite"
+                android:id="@+id/button10"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:clickable="true"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:contentDescription="@string/favorite_button"
+                android:onClick="Favorite"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/user_photos"
                 android:id="@+id/button6"
                 android:layout_marginTop="10dp"

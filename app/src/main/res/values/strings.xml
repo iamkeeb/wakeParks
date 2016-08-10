@@ -28,4 +28,6 @@
     <string name="keep_me_logged_in">Keep me logged in</string>
     <string name="park_name">Park Name</string>
     <string name="add_review">Add Review</string>
+    <string name="favorite">Favorite</string>
+    <string name="favorite_button">favorite button</string>
 </resources>
