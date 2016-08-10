@@ -1,7 +1,9 @@
 package com.example.kissesfrme_20.wakeparks;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -56,6 +59,23 @@ public class review_page extends AppCompatActivity {
 
         listView.setAdapter(adapter);
     }
+
+    public void add_Review(View view) {
+        new AlertDialog.Builder(this)
+                .setTitle("User Review")
+                .setMessage("Rate and Review the Park!")
+                .setView(R.layout.review_element)
+                .setPositiveButton("Submit", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                })
+                .show();
+    }
+
 
     /* A modified ArrayAdapter that can update ratings as well as text*/
 
