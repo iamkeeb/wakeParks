@@ -12,8 +12,18 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_weight="1"
-        />
+        android:id="@+id/listView" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_review"
+        android:id="@+id/button10"
+        android:layout_alignBottom="@+id/listView"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:background="@android:drawable/dialog_holo_dark_frame"
+        android:clickable="true" />
 
 </RelativeLayout>

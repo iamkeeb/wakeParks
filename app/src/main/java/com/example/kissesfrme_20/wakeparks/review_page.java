@@ -1,20 +1,25 @@
 package com.example.kissesfrme_20.wakeparks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
 public class review_page extends AppCompatActivity {
 
+    private FirebaseAuth firebaseAuth;
     ListView listView;
     String park_name;
 
@@ -22,6 +27,13 @@ public class review_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_page);
+
+        Button add_review = (Button) findViewById(R.id.button10);
+        firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() == null) {
+            ((ViewGroup) add_review.getParent()).removeView(add_review);
+        }
+
 
         Bundle extras = getIntent().getExtras();
         park_name = "Hydrous Wake Park - Allen";
