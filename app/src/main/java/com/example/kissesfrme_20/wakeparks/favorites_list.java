@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class favorites_list extends AppCompatActivity {
@@ -42,6 +44,14 @@ public class favorites_list extends AppCompatActivity {
         for (HashMap<String,String> h : parks) {
             park_list.add(new Park(h.get("name"), h.get("rating")));
         }
+
+        Collections.sort(park_list, new Comparator<Park>() {
+            @Override
+            public int compare(Park park1, Park park2)
+            {
+                return (int) (park2.rating * 2 - park1.rating * 2);
+            }
+        });
 
         listView = (ListView) findViewById(R.id.listView);
 
