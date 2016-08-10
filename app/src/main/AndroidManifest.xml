@@ -75,6 +75,23 @@
                 android:value=".find_park" />
         </activity>
         <activity android:name=".ProfileActivity"></activity>
+                <activity
+            android:name=".park_search"
+            android:label="@string/search_parks_activity"
+            android:parentActivityName=".find_park">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".find_park" />
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
     </application>
 
 </manifest>

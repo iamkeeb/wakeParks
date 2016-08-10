@@ -11,6 +11,7 @@
     <string name="park_info">park info</string>
     <string name="find_park_activity">find park</string>
     <string name="list_park_activity">list park</string>
+    <string name="search_parks_activity">search parks</string>
     <string name="route_me">Route Me</string>
     <string name="leads_to_map_activity">leads to map activity</string>
     <string name="title_activity_park_map">Map</string>

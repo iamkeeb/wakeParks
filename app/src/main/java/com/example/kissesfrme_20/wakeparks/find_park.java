@@ -39,4 +39,9 @@ public class find_park extends welcome_page {
         Intent intent = new Intent(this, park_map.class);
         startActivity(intent);
     }
+
+    public void searchParks(View view) {
+        Intent intent = new Intent(this, park_search.class);
+        startActivity(intent);
+    }
 }
