@@ -7,12 +7,11 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality. 
     -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -29,8 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".cable_park"></activity>
-        <activity android:name=".info_page"></activity>
+        <activity android:name=".cable_park" />
+        <activity android:name=".info_page" />
         <activity
             android:name=".find_park"
             android:label="@string/find_park_activity"
@@ -39,7 +38,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".welcome_page" />
         </activity>
-        <activity android:name=".login_page"></activity>
+        <activity android:name=".login_page" />
         <activity
             android:name=".park_list"
             android:label="@string/list_park_activity"
@@ -73,8 +72,9 @@
             android:parentActivityName=".find_park">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".find_park" /></activity>
-
+                android:value=".find_park" />
+        </activity>
+        <activity android:name=".ProfileActivity"></activity>
     </application>
 
 </manifest>

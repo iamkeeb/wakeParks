@@ -14,9 +14,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class login_page extends AppCompatActivity implements View.OnClickListener {
 
@@ -34,7 +33,11 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_login_page);
 
         firebaseAuth = FirebaseAuth.getInstance();
-
+        if(firebaseAuth.getCurrentUser() != null) {
+            //start user profile
+            finish();
+            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+        }
 
         progress = new ProgressDialog(this);
         buttonSignIn = (Button) findViewById(R.id.button8);
@@ -49,7 +52,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
     private void registerUser() {
         String email =  "";
         email = editEmail.getText().toString().trim();
-        String pw = " ";
+        String pw = "";
         pw = editPassword.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)) {
@@ -74,9 +77,46 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
                             //user is successfully registerd and logged in
                             //we will start the profile activity here
                             //for now, displays toast
-                            Toast.makeText(login_page.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(login_page.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         } else {
                             Toast.makeText(login_page.this, "Failed to Register", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+        progress.dismiss();
+    }
+
+    private void userLogin() {
+        String email =  "";
+        email = editEmail.getText().toString().trim();
+        String pw = "";
+        pw = editPassword.getText().toString().trim();
+
+        if(TextUtils.isEmpty(email)) {
+            Toast.makeText(this, "Please enter email", Toast.LENGTH_SHORT).show();
+            //stops function from executing further
+            return;
+        }
+        if(TextUtils.isEmpty(pw)) {
+            Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show();
+            //stops function from executing further
+            return;
+        }
+
+        progress.setMessage("Logging In...");
+        progress.show();
+
+        firebaseAuth.signInWithEmailAndPassword(email, pw)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        progress.dismiss();
+                        if(task.isSuccessful()) {
+                            //start profile
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         }
                     }
                 });
@@ -86,6 +126,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
     public void onClick(View view) {
         if(view == buttonSignIn) {
             //open user view
+            userLogin();
         }
         if (view == buttonSignUp) {
             //register new user

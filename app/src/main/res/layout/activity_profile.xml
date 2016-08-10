@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kissesfrme_20.wakeparks.ProfileActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="126dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorBlack"
+            android:src="@android:drawable/ic_menu_search"
+            android:layout_weight="0.20" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorBlack"
+            android:src="@android:drawable/ic_menu_directions"
+            android:layout_weight="0.20" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorBlack"
+            android:src="@android:drawable/ic_menu_edit"
+            android:layout_weight="0.20" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorBlack"
+            android:src="@android:drawable/star_big_off"
+            android:layout_weight="0.20"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorBlack"
+            android:src="@android:drawable/ic_lock_idle_lock"
+            android:layout_weight="0.20"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorBlack"
+            android:id="@+id/button15"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.20" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Maps"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorBlack"
+            android:id="@+id/button16"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.20"
+            android:onClick="parkMaps" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="List"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorBlack"
+            android:id="@+id/button17"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.20"
+            android:onClick="listParks"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Favorites"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorBlack"
+            android:id="@+id/button18"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.20" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorBlack"
+            android:id="@+id/button19"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.20"/>
+    </LinearLayout>
+
+</LinearLayout>
