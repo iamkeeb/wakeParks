@@ -1,11 +1,16 @@
 package com.example.kissesfrme_20.wakeparks;
 
+import android.*;
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.JsonReader;
 import android.util.Log;
 
@@ -52,13 +57,13 @@ public class park_map extends FragmentActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
-        ArrayList<HashMap<String, String>> parks = new ArrayList<HashMap<String,String>>();
+        ArrayList<HashMap<String, String>> parks = new ArrayList<HashMap<String, String>>();
         try {
             parks = readJsonAll(getAssets().open("wake_parks.json"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for(int i = 0; i < parks.size(); i++) {
+        for (int i = 0; i < parks.size(); i++) {
             String name = "";
             name += parks.get(i).get("name");
             String address = "";
@@ -67,6 +72,20 @@ public class park_map extends FragmentActivity implements OnMapReadyCallback {
             LatLng park = new LatLng(Double.parseDouble(parks.get(i).get("latitude")), Double.parseDouble(parks.get(i).get("longitude")));
             Log.v("TAG", park.toString());
             mMap.addMarker(new MarkerOptions().position(park).title(name));
+        }
+
+
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    1);
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                    == PackageManager.PERMISSION_GRANTED) {
+                mMap.setMyLocationEnabled(true);
+            }
         }
 
         LatLng austin = new LatLng(30.2849, -97.7341);
