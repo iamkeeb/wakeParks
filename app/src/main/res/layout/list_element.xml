@@ -14,7 +14,8 @@
         android:numStars="5"
         android:scaleX=".7"
         android:scaleY=".7"
-        style="@android:style/Widget.Holo.RatingBar.Indicator" />
+        style="@android:style/Widget.Holo.RatingBar.Indicator"
+        android:layout_gravity="center_vertical" />
 
     <TextView
         android:id="@+id/label"

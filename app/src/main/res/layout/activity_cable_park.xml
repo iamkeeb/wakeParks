@@ -95,7 +95,8 @@
                 android:clickable="true"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:contentDescription="@string/ratings_button" />
+                android:contentDescription="@string/ratings_button"
+                android:onClick="Review" />
 
             <Button
                 android:layout_width="fill_parent"

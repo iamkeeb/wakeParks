@@ -31,7 +31,7 @@ import java.util.HashMap;
 
 public class cable_park extends AppCompatActivity {
     private static final String TAG = "Cable Park";
-    private String lat, lon, name;
+    private String lat, lon, park_name;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -43,7 +43,7 @@ public class cable_park extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Bundle extras = getIntent().getExtras();
-        String park_name = "Hydrous Wake Park - Allen";
+        park_name = "Hydrous Wake Park - Allen";
         if (extras != null) {
             park_name = extras.getString("park_name");
         }
@@ -202,11 +202,16 @@ public class cable_park extends AppCompatActivity {
     // Opens the park's latitude and longitude in Google Maps
     public void Route(View view) {
         String loc = lat + "," + lon;
-        String address = "geo:" + loc + "?q=" + loc + "(" + name + ")";
+        String address = "geo:" + loc + "?q=" + loc + "(" + park_name + ")";
         Uri gmmIntentUri = Uri.parse(address);
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
     }
 
+    public void Review(View view) {
+        Intent intent = new Intent(this, review_page.class);
+        intent.putExtra("park_name", park_name);
+        startActivity(intent);
+    }
 }
