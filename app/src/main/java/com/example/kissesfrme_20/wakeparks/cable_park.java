@@ -42,6 +42,7 @@ public class cable_park extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+    public Button favbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class cable_park extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_cable_park);
+        favbtn = (Button) findViewById(R.id.button10);
 
         TextView n = (TextView) findViewById(R.id.textView4);
 
