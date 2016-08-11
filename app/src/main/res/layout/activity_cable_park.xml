@@ -96,7 +96,8 @@
                 android:clickable="true"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:contentDescription="@string/user_photos_button" />
+                android:contentDescription="@string/user_photos_button"
+                android:onClick="notImplemented"/>
 
             <Button
                 android:layout_width="fill_parent"
@@ -121,7 +122,8 @@
                 android:background="@android:drawable/dialog_holo_dark_frame"
                 android:layout_marginTop="10dp"
                 android:clickable="true"
-                android:contentDescription="@string/edit_information_button" />
+                android:contentDescription="@string/edit_information_button"
+                android:onClick="notImplemented"/>
 
         </LinearLayout>
     </ScrollView>

@@ -241,4 +241,8 @@ public class cable_park extends AppCompatActivity {
         editor.putStringSet("favorites", favorites);
         editor.commit();
     }
+
+    public void notImplemented(View view) {
+        Toast.makeText(getApplicationContext(), "Not Yet Implemented", Toast.LENGTH_SHORT).show();
+    }
 }
