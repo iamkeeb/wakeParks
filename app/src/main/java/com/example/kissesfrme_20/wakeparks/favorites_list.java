@@ -2,9 +2,11 @@ package com.example.kissesfrme_20.wakeparks;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +24,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class favorites_list extends AppCompatActivity {
 
@@ -39,10 +43,14 @@ public class favorites_list extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        SharedPreferences pref = getSharedPreferences("favorites",0);
+        Set<String> def = new HashSet<String>();
+        Set<String> favorites = new HashSet<String>(pref.getStringSet("favorites", def));
+        //Log.v("Favorites List", "" + favorites.size());
         ArrayList<Park> park_list = new ArrayList<Park>();
         for (HashMap<String,String> h : parks) {
-            park_list.add(new Park(h.get("name"), h.get("rating")));
+            if (favorites.contains(h.get("name")))
+                park_list.add(new Park(h.get("name"), h.get("rating")));
         }
 
         Collections.sort(park_list, new Comparator<Park>() {

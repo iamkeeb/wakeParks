@@ -2,10 +2,12 @@ package com.example.kissesfrme_20.wakeparks;
 
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.StrictMode;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
@@ -31,7 +33,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 public class cable_park extends AppCompatActivity {
 
@@ -224,5 +230,15 @@ public class cable_park extends AppCompatActivity {
 
     public void Favorite(View view) {
         Toast.makeText(getApplicationContext(), "Added to Favorites", Toast.LENGTH_SHORT).show();
+        SharedPreferences pref = getSharedPreferences("favorites",0);
+        Set<String> def = new HashSet<String>();
+        Set<String> favorites = new HashSet<String>(pref.getStringSet("favorites", def));
+        favorites.add(park_name);
+        /*for (String s : favorites) {
+            Log.v("Favorite Button",s);
+        }*/
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putStringSet("favorites", favorites);
+        editor.commit();
     }
 }
